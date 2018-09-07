@@ -17,7 +17,6 @@ var orm = {
     connection.query(queryString, [tableInput, {burger_name: value}, cb], function(err, result) {
       if (err) throw err;
 
-        console.log ("Burger added.");
         cb(result);
 
     })
@@ -28,15 +27,11 @@ var orm = {
 
      connection.query(queryString, [tableInput, {devoured: value}, {burger_name:propertyValue}], function(err, result) {
        if (err) throw err;
-       console.log(result);
-       console.log ("Updated a burger.");
+
        cb(result);
     })
   } 
 }
-
-// var promise1
-
 
 
 module.exports = orm;
