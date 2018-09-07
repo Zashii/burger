@@ -28,20 +28,10 @@
   
 <script>
 	$(document).ready(function() {
-		$(".eat").click(function(){
-
-	 		 
-			  $.get("/api/eat/", function(data) {
-
-	  			
-
- 			 });
-
-		}); 
 
 		$("#addBurger").click(function(){
-			$.get("/api/add/" + $("#addBurgerName").val(), function(data) {
-
+			$.post("/api/add/" + $("#addBurgerName").val(), [], function(data) {
+				location.reload();
 	  			
 
  			});

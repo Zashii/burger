@@ -13,7 +13,7 @@
       {{#each burgers2 }}
       {{#if devoured }}
       {{else}}
-      <p>Uneaten Burger is {{burger_name}} </p> <button class="eat" value={{burger_name}} onclick="$.get('api/eat/' + this.value)">Eat it!</button>
+      <p>Uneaten Burger is {{burger_name}} </p> <button class="eat" value="{{burger_name}}" onclick="$.post('api/eat/' + this.value, [], function(data){location.reload()})">Eat it!</button>
       {{/if}}
       {{/each}}
 
@@ -30,7 +30,6 @@
 
   </div>
 
-  {{!-- $.get('api/eat/' + this.value, function(data) {}; console.log(this.value)) --}}
 
 
 
