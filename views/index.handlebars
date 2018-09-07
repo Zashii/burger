@@ -1,0 +1,36 @@
+  <div style="border:2px solid red">
+
+    <img src="http://healthsupple.org/images/burger.jpg"/>
+    
+    <h1> Burgers: </h1>
+
+    <button type="input" id="addBurger" style="width: 120px; height: 80px">Add Burger</button>
+    <input type="text" id="addBurgerName">
+    <h2 id="ue"> Uneaten Burgers:
+
+    </h2>
+
+      {{#each burgers2 }}
+      {{#if devoured }}
+      {{else}}
+      <p>Uneaten Burger is {{burger_name}} </p> <button class="eat" value={{burger_name}} onclick="$.get('api/eat/' + this.value)">Eat it!</button>
+      {{/if}}
+      {{/each}}
+
+    <h2 id="e"> Eaten Burgers:
+
+    </h2>
+
+      {{#each burgers2 }}
+      {{#if devoured }}
+        <p>Eaten Burger is {{burger_name}} </p>
+      {{/if}}
+      {{/each}}
+
+
+  </div>
+
+  {{!-- $.get('api/eat/' + this.value, function(data) {}; console.log(this.value)) --}}
+
+
+
